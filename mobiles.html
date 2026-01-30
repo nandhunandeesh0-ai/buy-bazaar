@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mobiles</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f3f6;
+}
+
+.container {
+  display: flex;
+  padding: 15px;
+}
+
+/* FILTERS */
+.filters {
+  width: 250px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.filters h3 {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.filters label {
+  display: block;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* PRODUCTS */
+.products {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.card h4 {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.card .price {
+  color: #1a73e8;
+  font-weight: bold;
+}
+
+.card .rating {
+  font-size: 13px;
+  color: #388e3c;
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="container">
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <h3>Brand</h3>
+    <label><input type="checkbox" class="brand" value="Iphone"> Iphone </label>
+    <label><input type="checkbox" class="brand" value="Samsung"> Samsung</label>
+    <label><input type="checkbox" class="brand" value="Realme"> OnePlus</label>
+    <label><input type="checkbox" class="brand" value="Realme"> Redmi</label>
+    <label><input type="checkbox" class="brand" value="Realme"> Realme</label>
+    <label><input type="checkbox" class="brand" value="Realme"> Nothing</label>
+    <label><input type="checkbox" class="brand" value="Realme"> POCO</label>
+    <label><input type="checkbox" class="brand" value="Realme"> IQOO</label>
+    <label><input type="checkbox" class="brand" value="Realme"> Moto</label>
+    <label><input type="checkbox" class="brand" value="Realme"> Vivo</label>
+    <label><input type="checkbox" class="brand" value="Realme"> Oppo</label>
+
+    <h3>Storage</h3>
+    <label><input type="checkbox" class="Storage" value="7"> 128 </label>
+    <label><input type="checkbox" class="Storage" value="8"> 256 </label>
+    <label><input type="checkbox" class="Storage" value="8"> 512 </label>
+    <label><input type="checkbox" class="Storage" value="8"> 1 TB </label>
+    <label><input type="checkbox" class="Storage" value="8"> 64 </label>
+
+    <h3>Rating</h3>
+    <select id="rating">
+      <option value="0">All</option>
+      <option value="3">3★ & above</option>
+      <option value="4">4★ & above</option>
+      <option value="4.5">4.5★ & above</option>
+      <option value="5">5★ & above</option>
+    </select>
+
+    <h3>Price</h3>
+    <input type="range" id="price" min="5000" max="50000" value="50000">
+    <p>Up to ₹<span id="priceValue">50000</span></p>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="products">
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+
+</div>
+
+<script>
+const products = [
+  {
+    name: "Iphone 17 Pro Max",
+    brand: "Iphone",
+    price: 148000,
+    rating: 4.8,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/f/v/m/-original-imahft6chnx2vbuy.jpeg?q=70"
+  },
+  {
+    name: "One Plus 12R ",
+    brand: "One Plus",
+    price: 56000,
+    rating: 4.5,
+    Storage: 256,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/q/p/q/-original-imagy5wfcgybpq5x.jpeg?q=70"
+  },
+  {
+    name: "Samsung Fold",
+    brand: "Samsung",
+    price: 57990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/c/n/e/-original-imahggevxjaagtxu.jpeg?q=70"
+  },
+  {
+    name: "Samsung Ulter Fold",
+    brand: "Samsung",
+    price: 57990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/i/5/1/-original-imagzm8pvabtmeys.jpeg?q=70"
+  },
+  {
+    name: "Samsung Galaxy S24 5G",
+    brand: "Samsung",
+    price: 14990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/120/120/xif0q/mobile/f/a/6/-original-imahfz2tnafhmagr.jpeg?q=80"
+  },
+  {
+    name: "POCO M7 5G",
+    brand: "POCO",
+    price: 15990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/r/w/0/-original-imah9wydggh9mtxt.jpeg?q=70"
+  },
+  {
+    name: "CMF by Nothing Phone 2 Pro",
+    brand: "Nothing",
+    price: 20990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/x/g/r/-original-imahc7ez8cq55mah.jpeg?q=70"
+  },
+  {
+    name: "Vivo T8 5G",
+    brand: "VIVO",
+    price: 16990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/j/f/0/-original-imahbgqyz5sqhwq9.jpeg?q=70"
+  },
+  {
+    name: "Redmi A5",
+    brand: "Redmi",
+    price: 15990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/h/g/o/-original-imahb56zdk5ybj9r.jpeg?q=70"
+  },
+  {
+    name: "One Plus Nord",
+    brand: "OnePlus",
+    price: 27990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/a/v/1/-original-imahgkgxn9gp4b9j.jpeg?q=70"
+  },
+  {
+    name: "Iphone 16 Plus",
+    brand: "Iphone",
+    price: 57990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/120/120/xif0q/mobile/o/d/1/-original-imahggetmzzanrty.jpeg?q=80"
+  },
+  {
+    name: "MOTOROLA g05",
+    brand: "Moto",
+    price: 7990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/j/a/b/-original-imah83eztbdcsknu.jpeg?q=70"
+  },
+  {
+    name: "Nothing Phone",
+    brand: "Nothing",
+    price: 37990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/c/u/k/-original-imahcfcfbwzmrecy.jpeg?q=70"
+  },
+  {
+    name: "IQOO Z10 5G",
+    brand: "IQOO",
+    price: 14990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/b/b/u/-original-imahgzpkwbjdkhm3.jpeg?q=70"
+  },
+  {
+    name: "Xiaomi 14 CIVI",
+    brand: "Redmi",
+    price: 15990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/m/q/u/-original-imah34gx5euj4gqz.jpeg?q=70"
+  },
+  {
+    name: "POCO M7 Pro 5G",
+    brand: "POCO",
+    price: 17990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/v/m/x/-original-imah7jspd8dcxfut.jpeg?q=70"
+  },
+  {
+    name: "Oppo K13 5G",
+    brand: "Oppo",
+    price: 19990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/s/r/y/-original-imahfw4vez79uubg.jpeg?q=70"
+  },
+  {
+    name: "Realme 14 Pro",
+    brand: "Realme",
+    price: 57990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/7/i/o/-original-imahew8bnwdkp8zc.jpeg?q=70"
+  },
+  {
+    name: "Vivo T4x 5g",
+    brand: "Samsung",
+    price: 57990,
+    rating: 4.5,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/j/t/v/-original-imahavdv28z4nrkn.jpeg?q=70"
+  },
+  {
+    name: "Redmi 15 5g",
+    brand: "Redmi",
+    price: 17990,
+    rating: 4.7,
+    Storage: 128,
+    image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/1/i/a/note-15-5g-rma-redmi-original-imahjhpuuxyff3y3.jpeg?q=70"
+  },
+];
+
+const grid = document.getElementById("productGrid");
+const priceInput = document.getElementById("price");
+const priceValue = document.getElementById("priceValue");
+
+function render(items) {
+  grid.innerHTML = "";
+  items.forEach(p => {
+    grid.innerHTML += `
+      <div class="card">
+        <img src="${p.image}">
+        <h4>${p.name}</h4>
+        <div class="rating">⭐ ${p.rating}</div>
+        <div class="price">₹${p.price}</div>
+      </div>
+    `;
+  });
+}
+
+function applyFilters() {
+  const brands = [...document.querySelectorAll(".brand:checked")].map(b => b.value);
+  const caps = [...document.querySelectorAll(".Storage:checked")].map(c => Number(c.value));
+  const rating = Number(document.getElementById("rating").value);
+  const maxPrice = Number(priceInput.value);
+
+  const filtered = products.filter(p =>
+    (brands.length === 0 || brands.includes(p.brand)) &&
+    (caps.length === 0 || caps.includes(p.capacity)) &&
+    p.rating >= rating &&
+    p.price <= maxPrice
+  );
+
+  render(filtered);
+}
+
+document.querySelectorAll("input, select").forEach(el =>
+  el.addEventListener("change", applyFilters)
+);
+
+priceInput.addEventListener("input", () => {
+  priceValue.textContent = priceInput.value;
+  applyFilters();
+});
+
+render(products);
+</script>
+
+</body>
+</html>

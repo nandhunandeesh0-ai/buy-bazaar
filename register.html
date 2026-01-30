@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BUY BAZAAR | Mobile Login</title>
+<style>
+body {
+  font-family: Arial;
+  background: linear-gradient(135deg,#4facfe,#00f2fe);
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.box {
+  background:#fff;
+  padding:30px;
+  width:350px;
+  border-radius:10px;
+  text-align:center;
+}
+input,button {
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+}
+button {
+  background:#4facfe;
+  border:none;
+  color:#fff;
+  font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Mobile Login</h2>
+
+  <input id="mobile" placeholder="Enter Mobile Number">
+  <button onclick="sendOTP()">Send OTP</button>
+
+  <input id="otp" placeholder="Enter OTP">
+  <button onclick="verifyOTP()">Verify OTP</button>
+</div>
+
+<script>
+const API = "http://localhost:5000/api/auth";
+
+function sendOTP() {
+  fetch(API + "/register", {
+    method:"POST",
+    headers:{ "Content-Type":"application/json" },
+    body: JSON.stringify({ mobile: mobile.value })
+  })
+  .then(res=>res.json())
+  .then(data=>alert(data.message));
+}
+
+function verifyOTP() {
+  fetch(API + "/verify", {
+    method:"POST",
+    headers:{ "Content-Type":"application/json" },
+    body: JSON.stringify({ mobile: mobile.value, otp: otp.value })
+  })
+  .then(res=>res.json())
+  .then(data=>{
+    alert("Login Success");
+    window.location.href="homepage.html";
+  });
+}
+</script>
+
+</body>
+</html>

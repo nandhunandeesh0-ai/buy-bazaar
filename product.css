@@ -1,0 +1,234 @@
+#product{
+    display: flex;
+}
+
+#topmenu >span{
+    padding: 5px;
+    margin: 5px;
+    font-family: sans-serif;
+}
+
+#collection{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 20px;
+}
+
+#collection >div{
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    
+}
+
+.avatar{
+    height: 200px;
+    width: 150px;
+}
+
+.innerbox{
+    display: flex;
+    justify-content: space-around;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f1f3f6;
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    padding: 20px;
+}
+
+/* FILTER SIDEBAR */
+.filters {
+    width: 270px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+/* TITLE */
+.filter-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+.filter-section {
+    border-top: 1px solid #e0e0e0;
+    padding: 15px 0;
+}
+
+.filter-section:first-child {
+    border-top: none;
+}
+
+.filter-section h3 {
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* CATEGORY LINKS */
+.category-link {
+    font-size: 13px;
+    color: #2874f0;
+    cursor: pointer;
+    margin-bottom: 6px;
+}
+
+.category-link.active {
+    font-weight: bold;
+}
+
+/* SEARCH */
+.search-box {
+    width: 100%;
+    padding: 6px 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+
+/* CHECKBOX */
+.filter-section label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.filter-section input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* MORE */
+.more {
+    font-size: 12px;
+    color: #2874f0;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* PRICE */
+.price-slider {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.price-slider input[type="range"] {
+    width: 100%;
+}
+
+.price-inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.price-inputs select {
+    padding: 4px;
+    font-size: 12px;
+}
+
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* MAIN CONTAINER */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: #f7f7f7;
+}
+
+/* FILTER PANEL */
+.filters {
+  width: 260px;
+  background: #ffffff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  
+}
+
+.filters h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+/* LABELS */
+.filters label {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* SELECT & INPUT */
+.filters select,
+.filters input[type="number"] {
+  width: 100%;
+  margin-top: 5px;
+  padding: 7px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* CHECKBOX ROWS */
+.filters input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* PRODUCTS AREA */
+.products {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* EMPTY STATE (if needed) */
+.empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #ccc;
+  color: #777;
+  padding: 40px;
+}
+
+.empty-state h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}

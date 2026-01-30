@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Success</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  padding: 40px;
+}
+
+.box {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+h1 {
+  color: #1565d8;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.total {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1565d8;
+  margin-top: 20px;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #1565d8;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>✅ Order Placed Successfully</h1>
+  <p id="orderInfo"></p>
+
+  <h3>Items Ordered</h3>
+  <div id="items"></div>
+
+  <div class="total" id="grandTotal"></div>
+
+  <button class="btn" onclick="goHome()">Go to Home</button>
+</div>
+
+<script>
+const order = JSON.parse(localStorage.getItem("latestOrder"));
+
+if (!order) {
+  document.body.innerHTML = "<h2>No order found</h2>";
+}
+
+document.getElementById("orderInfo").innerHTML = `
+  <strong>Order ID:</strong> ${order.orderId}<br>
+  <strong>Date:</strong> ${order.date}
+`;
+
+const itemsDiv = document.getElementById("items");
+
+order.items.forEach(item => {
+  itemsDiv.innerHTML += `
+    <div class="item">
+      <span>${item.name} × ${item.qty}</span>
+      <span>₹${(item.price * item.qty).toLocaleString()}</span>
+    </div>
+  `;
+});
+
+document.getElementById("grandTotal").innerText =
+  "Grand Total: " + order.grandTotal;
+
+function goHome() {
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

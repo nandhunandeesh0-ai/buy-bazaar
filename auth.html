@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BUY BAZAAR | Auth</title>
+
+<style>
+/* 🔥 YOUR SAME STYLES (UNCHANGED) */
+:root {
+    --primary-color: #4facfe;
+    --secondary-color: #00f2fe;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Segoe UI;
+}
+
+.main-title {
+    font-size: 50px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.container {
+    background: #fff;
+    border-radius: 15px;
+    width: 760px;
+    height: 480px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    padding: 50px;
+}
+
+.sign-in-container { left: 0; }
+.sign-up-container { right: 0; }
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+button {
+    background: #4facfe;
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div>
+<div class="main-title">BUY BAZAAR</div>
+
+<div class="container">
+
+<!-- SIGN UP -->
+<div class="form-container sign-up-container">
+<h2>Register</h2>
+<input type="text" id="regName" placeholder="Name">
+<input type="tel" id="regMobile" placeholder="Mobile Number">
+<input type="text" id="regOtp" placeholder="OTP">
+<button onclick="sendOtp('register')">Send OTP</button>
+<button onclick="register()">Register</button>
+</div>
+
+<!-- SIGN IN -->
+<div class="form-container sign-in-container">
+<h2>Login</h2>
+<input type="tel" id="loginMobile" placeholder="Mobile Number">
+<input type="text" id="loginOtp" placeholder="OTP">
+<button onclick="sendOtp('login')">Send OTP</button>
+<button onclick="login()">Login</button>
+</div>
+
+</div>
+</div>
+
+<script>
+const API = "http://localhost:3000";
+
+function sendOtp(type) {
+    const mobile = type === "register"
+        ? document.getElementById("regMobile").value
+        : document.getElementById("loginMobile").value;
+
+    fetch(`${API}/send-otp`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mobile })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message));
+}
+
+function register() {
+    fetch(`${API}/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name: regName.value,
+            mobile: regMobile.value,
+            otp: regOtp.value
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+        if (data.success) location.href = "homepage.html";
+    });
+}
+
+function login() {
+    fetch(`${API}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            mobile: loginMobile.value,
+            otp: loginOtp.value
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+        if (data.success) location.href = "homepage.html";
+    });
+}
+</script>
+
+</body>
+</html>

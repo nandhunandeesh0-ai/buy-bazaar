@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f3f6;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 30px;
+    }
+    .product-img img {
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+    .thumbnails {
+      display: flex;
+      margin-top: 10px;
+      gap: 10px;
+    }
+    .thumbnails img {
+      width: 60px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    .thumbnails img:hover {
+      border-color: #2874f0;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .brand {
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .rating {
+      display: inline-block;
+      background: #388e3c;
+      color: #fff;
+      padding: 3px 6px;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+    .price {
+      font-size: 26px;
+      margin: 15px 0;
+    }
+    .price del {
+      color: #878787;
+      margin-left: 10px;
+      font-size: 16px;
+    }
+    .discount {
+      color: #388e3c;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    .colors img {
+      width: 45px;
+      margin-right: 8px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+    .sizes button {
+      padding: 8px 14px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+    }
+    .sizes button:hover {
+      border-color: #2874f0;
+      color: #2874f0;
+    }
+    .sizes button.active {
+      border-color: #2874f0;
+      background: #eaf2ff;
+      color: #2874f0;
+      font-weight: bold;
+    }
+    .size-warning {
+      color: red;
+      margin-top: 10px;
+      display: none;
+      font-size: 14px;
+    }
+    .sizes button:hover {
+      border-color: #2874f0;
+      color: #2874f0;
+    }
+    .offers {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .offers li {
+      margin-bottom: 8px;
+    }
+    .delivery {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .buy-btns {
+      margin-top: 30px;
+    }
+    .buy-btns button {
+      padding: 14px 22px;
+      font-size: 16px;
+      margin-right: 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .cart {
+      background: #ff9f00;
+      color: #fff;
+    }
+    .buy {
+      background: #fb641b;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Image Slider -->
+    <div class="product-img">
+      <img id="mainImage" src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/h/d/v/xxl-full-sleeve-shinning-shirts-for-men-solstice-original-imagy9fws6hggdhz.jpeg?q=70" alt="Shirt" />
+      <div class="thumbnails">
+        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/h/d/v/xxl-full-sleeve-shinning-shirts-for-men-solstice-original-imagy9fws6hggdhz.jpeg?q=70" onclick="changeImage(this)" />
+        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/3/2/7/3xl-16lst-mstrd-vtexx-original-imah8sgztpp232gj.jpeg?q=70" onclick="changeImage(this)" />
+        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/d/t/y/l-frml-st2-vebnor-original-imahjk5jjdzpfujr.jpeg?q=70" onclick="changeImage(this)" />
+        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/m/r/y/l-avsh001-avolt-original-imahgmsjzc679kes.jpeg?q=70" onclick="changeImage(this)" />
+      </div>
+    </div>
+
+    <!-- Right Details -->
+    <div>
+      <div class="brand">AVOLT</div>
+      <div class="title">Men Regular Fit Solid Spread Collar Formal Shirt</div>
+      <div class="rating">3.9 ★</div> <span>383 ratings & 48 reviews</span>
+
+      <div class="price">₹313 <del>₹999</del><span class="discount">68% off</span></div>
+
+      <h4>Color</h4>
+      <div class="colors">
+        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/m/r/y/l-avsh001-avolt-original-imahgmsjzc679kes.jpeg?q=70" onclick="changeImage(this)" />
+        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/7/p/3/m-r-stbrg-cream-stoneberg-original-imahfqccddda8ptw.jpeg?q=70" onclick="changeImage(this)" />
+        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/i/0/o/s-frml-st2-vebnor-original-imahjw8fhuxukhbp.jpeg?q=70" onclick="changeImage(this)" />
+        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/3/2/7/3xl-16lst-mstrd-vtexx-original-imah8sgztpp232gj.jpeg?q=70" onclick="changeImage(this)" />
+
+      </div>
+
+      <h4>Size</h4>
+      <div class="sizes">
+        <button onclick="selectSize(this)">S</button>
+        <button onclick="selectSize(this)">M</button>
+        <button onclick="selectSize(this)">L</button>
+        <button onclick="selectSize(this)">XL</button>
+        <button onclick="selectSize(this)">XXL</button>
+      </div>
+      <div class="size-warning" id="sizeWarning">⚠ Please select a size before continuing</div>
+
+      <div class="offers">
+        <h4>Available Offers</h4>
+        <ul>
+          <li>10% off with Bank Card</li>
+          <li>5% cashback on Axis Bank</li>
+          <li>Extra ₹50 off on EMI</li>
+        </ul>
+      </div>
+
+      <div class="delivery">
+        <strong>Delivery:</strong> Bangalore - 560049 <br />
+        Delivered by <b>31 Jan, Saturday</b>
+      </div>
+
+      <div class="buy-btns">
+        <button class="cart" onclick="addToCart()">ADD TO CART</button>
+        <button class="buy" onclick="buyNow()">BUY NOW</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    let selectedSize = null;
+
+    const product = {
+      id: "shirt_001",
+      name: "Men Regular Fit Solid Spread Collar Formal Shirt",
+      price: 313,
+      image: "shirt1.jpg",
+      brand: "AVOLT"
+    };
+
+    function changeImage(el) {
+      document.getElementById('mainImage').src = el.src;
+    }
+
+    function selectSize(btn) {
+      const buttons = document.querySelectorAll('.sizes button');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedSize = btn.innerText;
+      document.getElementById('sizeWarning').style.display = 'none';
+    }
+
+  function getCart() {
+    return JSON.parse(localStorage.getItem('cartItems')) || [];
+  }
+
+  function saveCart(cart) {
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+  }
+
+  function addToCart() {
+    if (!selectedSize) {
+      document.getElementById('sizeWarning').style.display = 'block';
+      return;
+    }
+
+    let cart = getCart();
+
+    const existing = cart.find(
+      item => item.id === product.id && item.size === selectedSize
+    );
+
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        size: selectedSize,
+        quantity: 1
+      });
+    }
+
+    saveCart(cart);
+    alert('Item added to cart');
+  }
+
+  function buyNow() {
+    addToCart();
+    if (selectedSize) {
+      window.location.href = "cart.html";
+    }
+  }
+</script>
+</body>
+</html>
+
+
+<div class="product">
+        <img src="https://rukminim2.flixcart.com/image/280/280/ki96c280/flour/z/s/r/1-superior-mp-atta-1-whole-wheat-flour-aashirvaad-original-imafy2vzdzhr4yeg.jpeg?q=70">
+        <div class="product-title">AASHIRVAAD ATTA </div>
+        <div>
+          <span class="price">₹68</span>
+          <span class="old-price">₹74</span>
+          <span class="off">12% off</span>
+        </div>
+        <div class="product-footer">
+          <select>
+            <option>1 kg</option>
+          </select>
+          <button class="add-btn">Add Item</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://rukminim2.flixcart.com/image/280/280/xif0q/flour/q/h/2/5-premium-sharbati-atta-1-whole-wheat-flour-fortune-original-imahf2gcqwtvtgvx.jpeg?q=70">
+        <div class="product-title">FORTUNE Premium Sharbati Atta</div>
+        <div>
+          <span class="price">₹55</span>
+          <span class="old-price">₹65</span>
+          <span class="off">12% off</span>
+        </div>
+        <div class="product-footer">
+          <select>
+            <option>1 kg</option>
+          </select>
+          <button class="add-btn">Add Item</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://rukminim2.flixcart.com/image/280/280/xif0q/flour/h/1/p/-original-imah76bfkpcz89hz.jpeg?q=70">
+        <div class="product-title">bhagyalakshmi-ragi-flour</div>
+        <div>
+          <span class="price">₹38</span>
+          <span class="old-price">₹43</span>
+          <span class="off">12% off</span>
+        </div>
+        <div class="product-footer">
+          <select onchange="updatePrice(this)">
+            <option value="1kg" data-price="80" data-old="85">1 kg</option>
+            <option value="500g" data-price="40" data-old="48">500 g</option>
+            <option value="2kg" data-price="158" data-old="170">2 kg</option>
+          </select>
+          <button class="add-btn">Add Item</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://rukminim2.flixcart.com/image/280/280/xif0q/tea/g/p/e/-original-imahah2tenzqvwwe.jpeg?q=70">
+        <div class="product-title">Red label Tea</div>
+        <div>
+          <span class="price">₹9</span>
+          <span class="old-price">₹10</span>
+          <span class="off">12% off</span>
+        </div>
+        <div class="product-footer">
+          <select onchange="updatePrice(this)">
+            <option value="15 g" data-price="9" data-old="10">15 g</option>
+            <option value="100g" data-price="45" data-old="50">100 g</option>
+            <option value="50g" data-price="25" data-old="32">50 g</option>
+            <option value="250g" data-price="100" data-old="120">250 g</option>
+          </select>
+          <button class="add-btn">Add Item</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://rukminim2.flixcart.com/image/280/280/xif0q/salt/8/c/g/-original-imahg435nbytmkvh.jpeg?q=70">
+        <div class="product-title">AASHIRVAAD Crystal Iodized Salt</div>
+        <div>
+          <span class="price">₹20</span>
+          <span class="old-price">₹22</span>
+          <span class="off">12% off</span>
+        </div>
+        <div class="product-footer">
+          <select>
+            <option>1 kg</option>
+          </select>
+          <button class="add-btn">Add Item</button>
+        </div>
+      </div>

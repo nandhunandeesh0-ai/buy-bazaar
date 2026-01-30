@@ -1,0 +1,272 @@
+#para1{
+    border: 4px solid orange;
+}
+
+nav{
+    background-color: white;
+}
+
+#nav{
+    display: flex;
+ justify-content: space-around;
+ padding-top: 10px;
+ padding-bottom: 10px;
+ background-color: white;
+ width: 90%;
+ margin: auto;
+}
+
+#nav1{
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    padding: 50px;
+}
+
+body{
+    background-color: #F1F2F4;
+}
+
+#logo_name{
+    font-size: 20px;
+    font-family: sans-serif;
+    font-style: italic;
+    color: #2A55E5;
+    font-weight: bold;
+}
+
+#input_data{
+    border: none;
+    width: 500px;
+    height: 20px;
+   padding-left: 12px;
+   background-color: #F0F5FF;
+}
+
+main{
+    padding-bottom: 50px;
+}
+
+.navtab{
+    display: flex;
+    align-items: center;
+}
+
+#searchbar{
+    background-color: #F0F5FF;
+    padding: 4px;
+    border-radius: 15px;
+}
+
+option{
+    font-size: 15px; 
+    font-family: sans-serif;
+}
+
+select{
+    border: none;
+    font-size: 15px; 
+    font-family: sans-serif;
+}
+
+
+
+#categories{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 6px;
+    margin: 12px;
+    margin: auto;
+    width: 1400px;
+    margin: auto;
+    background-color: white;
+    margin-top: 10px;
+    font-family: sans-serif;
+}
+
+
+
+
+
+#categories > div > img{
+   height: 70px;
+   width: 60px;
+   background-color: white;
+}
+
+#categories > div{
+display: flex;
+flex-direction: column;
+align-items: center;
+font-weight: bold;
+font-size: 14px;
+padding: 10px;
+}
+
+#categories > div > p{
+    padding-top: 10px;
+}
+
+
+li{
+    list-style: none;
+}
+
+#footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 18px;
+    padding-top: 18px;
+}
+
+.heading{
+    color: gray;
+}
+
+
+
+
+
+/*************bestofcollection_contianer************/
+.bestofcollection_contianer{
+    width: 100%;
+    height: 260px;
+    background-color: red;
+}
+.bestofcollectionmoreoption{
+    height: 100%;
+    max-width: 100%;
+    background-color: blue;
+    position: relative;
+    bottom:0;
+
+}
+
+.bestofcollectionmoreoption img{
+    height: 100%;
+    width: 100%;
+    
+}
+.bestofcollection_item{
+    background-color: green;
+    max-width: 210px;
+    height: 260px ;
+    position: relative;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    flex-direction: column;
+
+}
+.bestofcollection_image_product{
+    display: flex;
+    flex-direction: column;
+}
+.bestofcollection_item_product{
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f1f3f6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 6px;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* GRID */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.product-card {
+    text-align: center;
+    padding: 15px;
+    background: #fff;
+    border-radius: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.product-card p {
+    color: #388e3c;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  z-index: 999;
+}
+
+.nav-item {
+  text-align: center;
+  color: #888;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.nav-item span {
+  font-size: 22px;
+  display: block;
+}
+
+.nav-item.active {
+  color: #4facfe;
+}
+
+.nav-item.active span {
+  transform: scale(1.15);
+}

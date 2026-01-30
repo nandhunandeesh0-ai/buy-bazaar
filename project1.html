@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Bazaar</title>
+    <link rel="stylesheet" href="./project1.css">
+</head>
+<body>
+    <nav>
+
+        <div id="nav">
+            <div id="nav1">
+                <span id="logo_name">
+                    Buy Bazaar 
+                </span>
+                <span style="color: gray;font-size: 16px; font-style: italic;font-family: sans-serif;">
+                    Explore
+                    <span style="color: chocolate;">
+                        pro
+                    </span>
+                      
+                </span>
+
+            </div>
+            <div class="navtab" id="Searchbar">
+                <span>
+                    <svg width="24" height="24" class="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Search Icon</title><path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 16L21 21" stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>   
+                <span>
+                  <input id="input_data" type="text" placeholder="Search for Product, Brands and More">
+                </span>
+            </div>
+            <div class="navtab">
+                <span >
+                     <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/Store-134a49.svg" 
+                     alt="Medicines/Drugs">
+                </span>
+                 <span style="font-size: 15px;font-family: sans-serif;padding-left: 12px;"> Medicines-Drugs </span>
+            </div>
+            <div class="navtab">
+                <span>
+                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-6bae67.svg"
+                      alt="Login" class="HmRjOS U_HGJf" width="24" height="24">
+                </span>
+
+                <span style="font-size: 15px;font-family: sans-serif;padding-left: 12px;"><a style="text-decoration: none;color: black;" href="./login.html"> Login </a>
+                    
+
+                </span>
+                <i class="fa-regular fa-circle-user"></i>
+                <i class="ldicon fa-solid fa-angle-down"></i>
+            </div>
+            <div class="navtab">
+                <span>
+                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-43eb4e.svg" alt="Cart" class="cY_QA8" width="24" height="24">
+                </span>
+                <span style="font-size: 15px;font-family: sans-serif;padding-left: 12px;"><a style="text-decoration: none;color: black;" href="./cart.html"> Cart </a>
+
+                </span>
+            </div>
+
+        </div>
+
+     </nav>
+       <style>
+    body {
+      font-family: Arial;
+      padding: 15px;
+    }
+    img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+    }
+    .price {
+      color: green;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+
+<script>
+const products = {
+  1: { name: "KADAK Tea", price: "₹175", img: "images/tea.png" },
+  2: { name: "Yippee Noodles", price: "₹116", img: "images/noodles.png" },
+  3: { name: "Fortune Atta", price: "₹255", img: "images/atta.png" },
+  4: { name: "Saffola Oil", price: "₹137", img: "images/oil.png" }
+};
+
+const id = new URLSearchParams(window.location.search).get("id");
+const product = products[id];
+
+document.getElementById("productName").innerText = product.name;
+document.getElementById("productPrice").innerText = product.price;
+document.getElementById("productImage").src = product.img;
+</script>
+<script>
+function openProduct(id) {
+  window.location.href = "=" + id;
+}
+</script>
+
+<h2 class="section-title">Deals of the Day</h2>
+
+<div class="slider-container">
+    
+<div class="slider-wrapper">
+
+  <div class="product-card" onclick="openProduct(1)">
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/380/470/image/5447accda9a1375d.jpg?q=80">
+    <p class="name"></p>
+    <p class="price">From ₹9 <span>₹10</span></p>
+  </div>
+
+  <div class="product-card" onclick="openProduct(2)"><a  style="text-decoration: none;color: black;" href="./page1.html">
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/380/470/image/8abdd28f56a8c8fd.jpg?q=80">
+    <p class="name"></p>
+    <p class="price">From ₹28 <span>₹30</span></p>
+    </a>
+  </div>
+
+  <div class="product-card" onclick="openProduct(3)">
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/380/470/image/20d3f58098602400.jpg?q=80">
+    <p class="name"></p>
+    <p class="price">From ₹9 <span>₹10</span></p>
+  </div>
+
+  <div class="product-card" onclick="openProduct(4)">
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/380/470/image/159c8a434c90aa01.jpg?q=80">
+    <p class="name"></p>
+    <p class="price">From ₹70 <span>₹110</span></p>
+  </div>
+
+  <div class="product-card" onclick="openProduct(2)">
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/380/470/image/09840fb9409848c8.jpg?q=80">
+    <p class="name"></p>
+    <p class="price">From ₹19 <span>₹25</span></p>
+  </div>
+
+  <div class="product-card" onclick="openProduct(2)">
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/380/470/image/680a4aaeb32683c7.jpg?q=80">
+    <p class="name"></p>
+    <p class="price">From ₹32 <span>₹45</span></p>
+  </div>
+
+  <div class="product-card" onclick="openProduct(2)">
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/380/470/image/deb975a97e33b3b0.jpg?q=80">
+    <p class="name"></p>
+    <p class="price">From ₹74 <span>₹80</span></p>
+  </div>
+
+  <div class="product-card" onclick="openProduct(2)">
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/380/470/image/39d48ddbbf4324f6.jpg?q=80">
+    <p class="name"></p>
+    <p class="price">From ₹15 <span>₹20</span></p>
+  </div>
+  
+</div>
+<script>
+const slider = document.getElementById("slider");
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f3f6;
+  }
+
+  .profile-header {
+    background: #2874f0;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .profile-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  .profile-header h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .profile-header p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .section {
+    background: #fff;
+    margin: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .section-title {
+    padding: 12px;
+    font-weight: bold;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+  }
+
+  .item:last-child {
+    border-bottom: none;
+  }
+
+  .item span {
+    flex: 1;
+    font-size: 15px;
+  }
+
+  .item small {
+    color: #777;
+  }
+
+  .arrow {
+    font-size: 18px;
+    color: #999;
+  }
+
+  .logout {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- PROFILE HEADER -->
+<div class="profile-header">
+  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+  <div>
+    <h2 id="username">Hello, User</h2>
+    <p id="useremail">user@email.com</p>
+  </div>
+</div>
+
+<!-- ORDERS SECTION -->
+<div class="section">
+  <div class="section-title">My Activity</div>
+
+  <div class="item" onclick="goTo('orders.html')">
+    <span>My Orders</span>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="item" onclick="goTo('coupons.html')">
+    <span>My Coupons</span>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="item" onclick="goTo('wishlist.html')">
+    <span>Wishlist</span>
+    <div class="arrow">›</div>
+  </div>
+</div>
+
+<!-- ACCOUNT SECTION -->
+<div class="section">
+  <div class="section-title">Account Settings</div>
+
+  <div class="item" onclick="goTo('address.html')">
+    <span>Saved Addresses</span>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="item" onclick="goTo('payments.html')">
+    <span>Payment Methods</span>
+    <div class="arrow">›</div>
+  </div>
+</div>
+
+<!-- HELP SECTION -->
+<div class="section">
+  <div class="section-title">Support</div>
+
+  <div class="item" onclick="goTo('help.html')">
+    <span>Help Center</span>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="item" onclick="goTo('terms.html')">
+    <span>Terms & Conditions</span>
+    <div class="arrow">›</div>
+  </div>
+</div>
+
+<!-- LOGOUT -->
+<div class="section">
+  <div class="item logout" onclick="logoutUser()">
+    <span>Logout</span>
+  </div>
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>
